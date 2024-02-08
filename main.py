@@ -18,7 +18,6 @@ def validate_button(popup, connected, password_entry):
     password = password_entry.get()
     if connected == True:
         subprocess.run(["sudo -S -k wg-quick down wg0"], input=password, shell=True, capture_output=True, text=True)
-        # print('va chier')
     else:
         subprocess.run(["sudo -S -k wg-quick up wg0"], input=password, shell=True, capture_output=True, text=True)
         popup.destroy()
